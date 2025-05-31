@@ -1,0 +1,15 @@
+{
+  "name": "qarpafront2025",
+  "version": "1.0.0",
+  "description": "Repositorio para as automações da disciplina de Automção Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.4.0"
+  }
+}
