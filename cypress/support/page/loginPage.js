@@ -1,18 +1,23 @@
 //Isso é o que é chamado de Page Object
-
 const ELEMENTS = {
     username: '[data-test="username"]',
     password: '[data-test="password"]',
-    btnLogin: '[data-test="login-button"]'
+    btnLogin: '[data-test="login-button"]',
+    errorMessage: '[data-test="error"]'
 }
 
 class LoginPage {
     preencherUsuario(usuario){
-        cy.get(ELEMENTS.username).type(usuario);
+        // Adicionamos uma verificação para não tentar digitar em campos vazios
+        if (usuario) {
+            cy.get(ELEMENTS.username).type(usuario);
+        }
     }
 
     preencherSenha(senha){
-        cy.get(ELEMENTS.password).type(senha);
+        if (senha) {
+            cy.get(ELEMENTS.password).type(senha);
+        }
     }
 
     clicarBotaoLogin(){
@@ -22,6 +27,10 @@ class LoginPage {
     loginAppAction(usuario,senha){
         cy.get(ELEMENTS.username).type(usuario);
         cy.get(ELEMENTS.password).type(senha);
+    }
+
+    verificarMensagemErro(mensagem) {
+        cy.get(ELEMENTS.errorMessage).should('be.visible').and('contain', mensagem);
     }
 }
 

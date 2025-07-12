@@ -5,7 +5,8 @@
     },
     "locked_out_user": {
       "username": "locked_out_user",
-      "password": "secret_sauce"
+      "password": "secret_sauce",
+      "message": "Epic sadface: Sorry, this user has been locked out."
     },
     "problem_user": {
       "username": "problem_user",
@@ -17,10 +18,22 @@
     },
     "usuario_vazio": {
         "username": "",
-        "password": "secret_sauce"
-      },
-      "senha_vazia": {
-          "username": "standard_user",
-          "password": ""
-        }
+        "password": "secret_sauce",
+        "message": "Epic sadface: Username is required"
+    },
+    "senha_vazia": {
+        "username": "standard_user",
+        "password": "",
+        "message": "Epic sadface: Password is required"
+    },
+    "usuario_invalido": {
+      "username": "a",
+      "password": "secret_sauce",
+      "message": "Epic sadface: Username and password do not match any user in this service"
+    },
+    "senha_invalida": {
+      "username": "standard_user",
+      "password": "aa",
+      "message": "Epic sadface: Username and password do not match any user in this service"
+    }
   }
